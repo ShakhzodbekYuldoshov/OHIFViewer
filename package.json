@@ -1,0 +1,136 @@
+{
+  "name": "root",
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "platform/*",
+      "extensions/*",
+      "modes/*"
+    ],
+    "nohoist": [
+      "**/html-minifier-terser"
+    ]
+  },
+  "engines": {
+    "node": ">=10",
+    "npm": ">=6",
+    "yarn": ">=1.16.0"
+  },
+  "scripts": {
+    "cm": "npx git-cz",
+    "build": "lerna run build:viewer --stream",
+    "build:dev": "lerna run build:dev --stream",
+    "build:ci": "lerna run build:viewer:ci --stream",
+    "build:qa": "lerna run build:viewer:qa --stream",
+    "build:ui:deploy-preview": "lerna run build:ui:deploy-preview --stream",
+    "build:demo": "lerna run build:viewer:demo --stream",
+    "dev": "lerna run dev:viewer --stream",
+    "dev:project": ".scripts/dev.sh",
+    "dev:orthanc": "lerna run dev:orthanc --stream",
+    "dev:dcm4chee": "lerna run dev:dcm4chee --stream",
+    "dev:static": "lerna run dev:static --stream",
+    "orthanc:up": "docker-compose -f .docker/Nginx-Orthanc/docker-compose.yml up",
+    "start": "yarn run dev",
+    "test": "yarn run test:unit",
+    "test-watch": "jest --collectCoverage --watchAll",
+    "test:unit": "jest --collectCoverage",
+    "test:unit:ci": "lerna run test:unit:ci --parallel --stream",
+    "test:e2e": "lerna run test:e2e --stream",
+    "test:e2e:ci": "lerna run test:e2e:ci --stream",
+    "test:e2e:dist": "lerna run test:e2e:dist --stream",
+    "test:e2e:serve": "lerna run test:e2e:serve --stream",
+    "see-changed": "lerna changed",
+    "docs:preview": "lerna run docs:preview --stream",
+    "docs:publish": "chmod +x ./build-and-publish-docs.sh && ./build-and-publish-docs.sh",
+    "release": "yarn run lerna:version && yarn run lerna:publish",
+    "lerna:clean": "lerna clean",
+    "lerna:cache": "./netlify-lerna-cache.sh",
+    "lerna:restore": "./netlify-lerna-restore.sh",
+    "lerna:version": "npx lerna version prerelease --force-publish",
+    "lerna:publish": "lerna publish from-package --canary --dist-tag canary",
+    "link-list": "npm ls --depth=0 --link=true"
+  },
+  "dependencies": {
+    "@babel/runtime": "7.7.6",
+    "core-js": "^3.2.1",
+    "cornerstone-core": "2.3.0",
+    "shader-loader": "^1.3.1",
+    "webpack": "^5.43.0",
+    "worker-loader": "^3.0.8",
+    "wslink": "^0.1.8"
+  },
+  "peerDependencies": {
+    "react": "17.0.2",
+    "react-dom": "17.0.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.5.0",
+    "@babel/plugin-proposal-class-properties": "^7.5.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.5.5",
+    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
+    "@babel/plugin-transform-arrow-functions": "^7.2.0",
+    "@babel/plugin-transform-regenerator": "^7.4.5",
+    "@babel/plugin-transform-runtime": "^7.5.0",
+    "@babel/preset-env": "^7.5.0",
+    "@babel/preset-react": "^7.0.0",
+    "autoprefixer": "10.2.4",
+    "babel-eslint": "9.x",
+    "babel-loader": "^8.0.6",
+    "babel-plugin-inline-react-svg": "1.1.0",
+    "babel-plugin-module-resolver": "^3.2.0",
+    "clean-webpack-plugin": "^3.0.0",
+    "copy-webpack-plugin": "^9.0.1",
+    "cross-env": "^5.2.0",
+    "css-loader": "^3.2.0",
+    "dotenv": "^8.1.0",
+    "eslint": "6.8.0",
+    "eslint-config-prettier": "^6.4.0",
+    "eslint-config-react-app": "^5.2.0",
+    "eslint-plugin-flowtype": "2.x",
+    "eslint-plugin-import": "2.x",
+    "eslint-plugin-jsx-a11y": "6.x",
+    "eslint-plugin-node": "^9.1.0",
+    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "7.x",
+    "eslint-plugin-react-hooks": "4.2.0",
+    "html-webpack-plugin": "^5.3.2",
+    "husky": "^3.0.0",
+    "jest": "^24.8.0",
+    "jest-canvas-mock": "^2.1.0",
+    "jest-junit": "^6.4.0",
+    "lerna": "^3.15.0",
+    "lint-staged": "^9.0.2",
+    "mini-css-extract-plugin": "^2.1.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.3",
+    "postcss": "^8.3.5",
+    "postcss-import": "^14.0.2",
+    "postcss-loader": "^6.1.1",
+    "postcss-preset-env": "^6.7.0",
+    "prettier": "^1.18.2",
+    "react-hot-loader": "^4.13.0",
+    "serve": "^11.1.0",
+    "start-server-and-test": "^1.10.0",
+    "style-loader": "^1.0.0",
+    "terser-webpack-plugin": "^5.1.4",
+    "unused-webpack-plugin": "2.4.0",
+    "webpack-cli": "^4.7.2",
+    "webpack-hot-middleware": "^2.25.0",
+    "webpack-merge": "^5.7.3",
+    "workbox-webpack-plugin": "^6.1.5"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,json,css}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "resolutions": {
+    "**/@babel/runtime": "7.7.6"
+  }
+}
