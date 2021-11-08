@@ -1,22 +1,22 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
-import classNames from 'classnames';
-import OutsideClickHandler from 'react-outside-click-handler';
-import { useTranslation } from 'react-i18next';
+import React, { useState } from "react";
+import PropTypes from "prop-types";
+import classNames from "classnames";
+import OutsideClickHandler from "react-outside-click-handler";
+import { useTranslation } from "react-i18next";
 
-import { Icon, Tooltip, ListMenu } from '../';
+import { Icon, Tooltip, ListMenu } from "../";
 
 const baseClasses = {
   Button:
-    'flex items-center rounded-md border-transparent border-2 cursor-pointer',
+    "flex items-center rounded-md border-transparent border-2 cursor-pointer",
   Primary:
-    'h-full flex flex-1 items-center rounded-md rounded-tr-none rounded-br-none',
+    "h-full flex flex-1 items-center rounded-md rounded-tr-none rounded-br-none",
   Secondary:
-    'h-full flex items-center justify-center rounded-tr-md rounded-br-md w-4',
-  PrimaryIcon: 'w-5 h-5',
-  SecondaryIcon: 'w-4 h-full stroke-1',
-  Separator: 'border-l pt-2 pb-2',
-  Content: 'absolute z-10 top-0 mt-12',
+    "h-full flex items-center justify-center rounded-tr-md rounded-br-md w-4",
+  PrimaryIcon: "w-5 h-5",
+  SecondaryIcon: "w-4 h-full stroke-1",
+  Separator: "border-l pt-2 pb-2",
+  Content: "absolute z-10 top-0 mt-12",
 };
 
 const classes = {
@@ -25,50 +25,50 @@ const classes = {
       baseClasses.Button,
       !isExpanded &&
         !primary.isActive &&
-        'hover:bg-primary-dark hover:border-primary-dark'
+        "hover:bg-primary-dark hover:border-primary-dark"
     ),
-  Interface: 'h-full flex flex-row items-center',
+  Interface: "h-full flex flex-row items-center",
   Primary: ({ primary, isExpanded }) =>
     classNames(
       baseClasses.Primary,
       primary.isActive && !isExpanded
-        ? 'bg-primary-light rounded-tr-md rounded-br-md active'
+        ? "bg-primary-light rounded-tr-md rounded-br-md active"
         : isExpanded
-        ? 'bg-primary-dark'
-        : 'bg-secondary-dark hover:bg-primary-dark'
+        ? "bg-primary-dark"
+        : "bg-secondary-dark hover:bg-primary-dark"
     ),
   Secondary: ({ isExpanded, primary }) =>
     classNames(
       baseClasses.Secondary,
       isExpanded
-        ? 'bg-primary-light rounded-tr-md rounded-br-md'
+        ? "bg-primary-light rounded-tr-md rounded-br-md"
         : primary.isActive
-        ? 'bg-secondary-dark'
-        : 'hover:bg-primary-dark bg-secondary-dark'
+        ? "bg-secondary-dark"
+        : "hover:bg-primary-dark bg-secondary-dark"
     ),
   PrimaryIcon: ({ primary, isExpanded }) =>
     classNames(
       baseClasses.PrimaryIcon,
       primary.isActive && !isExpanded
-        ? 'text-primary-dark'
-        : 'text-common-bright'
+        ? "text-primary-dark"
+        : "text-common-bright"
     ),
   SecondaryIcon: ({ isExpanded }) =>
     classNames(
       baseClasses.SecondaryIcon,
       isExpanded
-        ? 'text-primary-dark'
-        : 'text-primary-active hover:text-common-bright'
+        ? "text-primary-dark"
+        : "text-primary-active hover:text-common-bright"
     ),
   Separator: ({ primary, isExpanded, isHovering }) =>
     classNames(
       baseClasses.Separator,
       isHovering || isExpanded || primary.isActive
-        ? 'border-transparent'
-        : 'border-primary-active'
+        ? "border-transparent"
+        : "border-primary-active"
     ),
   Content: ({ isExpanded }) =>
-    classNames(baseClasses.Content, isExpanded ? 'block' : 'hidden'),
+    classNames(baseClasses.Content, isExpanded ? "block" : "hidden"),
 };
 
 const SplitButton = ({
@@ -84,11 +84,11 @@ const SplitButton = ({
   renderer,
   onInteraction,
 }) => {
-  const { t } = useTranslation('Buttons');
+  const { t } = useTranslation("Buttons");
 
   const { primaryToolId, toggles } = bState;
   /* Bubbles up individual item clicks */
-  const getSplitButtonItems = items =>
+  const getSplitButtonItems = (items) =>
     items.map((item, index) => ({
       ...item,
       index,
@@ -104,11 +104,11 @@ const SplitButton = ({
           commandOptions: item.commandOptions,
         });
 
-        setState(state => ({
+        setState((state) => ({
           ...state,
           primary: !isAction ? { ...item, index } : state.primary,
           isExpanded: false,
-          items: getSplitButtonItems(_items).filter(item =>
+          items: getSplitButtonItems(_items).filter((item) =>
             isRadio && !isAction ? item.index !== index : true
           ),
         }));
@@ -117,7 +117,7 @@ const SplitButton = ({
 
   const [state, setState] = useState({
     primary: _primary,
-    items: getSplitButtonItems(_items).filter(item =>
+    items: getSplitButtonItems(_items).filter((item) =>
       isRadio && !isAction ? item.id !== _primary.id : true
     ),
     isHovering: false,
@@ -125,13 +125,13 @@ const SplitButton = ({
   });
 
   const onSecondaryClickHandler = () =>
-    setState(state => ({ ...state, isExpanded: !state.isExpanded }));
+    setState((state) => ({ ...state, isExpanded: !state.isExpanded }));
   const onMouseEnterHandler = () =>
-    setState(state => ({ ...state, isHovering: true }));
+    setState((state) => ({ ...state, isHovering: true }));
   const onMouseLeaveHandler = () =>
-    setState(state => ({ ...state, isHovering: false }));
+    setState((state) => ({ ...state, isHovering: false }));
   const outsideClickHandler = () =>
-    setState(state => ({ ...state, isExpanded: false }));
+    setState((state) => ({ ...state, isExpanded: false }));
   const onPrimaryClickHandler = () => {
     onInteraction({
       groupId,
@@ -146,8 +146,10 @@ const SplitButton = ({
   };
 
   const isPrimaryActive =
-    (state.primary.type === 'tool' && primaryToolId === state.primary.id) ||
-    (state.primary.type === 'toggle' && toggles[state.primary.id] === true);
+    (state.primary.type === "tool" && primaryToolId === state.primary.id) ||
+    (state.primary.type === "toggle" && toggles[state.primary.id] === true);
+
+  console.log("ITEMS:  ", state.items);
 
   return (
     <OutsideClickHandler onOutsideClick={outsideClickHandler}>
@@ -157,7 +159,7 @@ const SplitButton = ({
             ...state,
             primary: { isActive: isPrimaryActive },
           })}
-          style={{ height: '40px' }}
+          style={{ height: "40px" }}
           onMouseEnter={onMouseEnterHandler}
           onMouseLeave={onMouseLeaveHandler}
         >
@@ -177,7 +179,7 @@ const SplitButton = ({
               >
                 <div
                   className="flex items-center justify-center w-full h-full"
-                  style={{ padding: '10px' }}
+                  style={{ padding: "10px" }}
                 >
                   <Icon
                     name={state.primary.icon}
@@ -224,7 +226,10 @@ const SplitButton = ({
           className={classes.Content({ ...state })}
           data-cy={`${groupId}-list-menu`}
         >
-          <ListMenu items={state.items} renderer={(args) => renderer({ ...args, t })} />
+          <ListMenu
+            items={state.items}
+            renderer={(args) => renderer({ ...args, t })}
+          />
         </div>
       </div>
     </OutsideClickHandler>
@@ -234,8 +239,8 @@ const SplitButton = ({
 const DefaultListItemRenderer = ({ icon, label, isActive, t }) => (
   <div
     className={classNames(
-      'flex flex-row items-center p-3 h-8 w-full hover:bg-primary-dark',
-      isActive && 'bg-primary-dark'
+      "flex flex-row items-center p-3 h-8 w-full hover:bg-primary-dark",
+      isActive && "bg-primary-dark"
     )}
   >
     <span className="mr-4 text-base whitespace-pre text-common-bright">
@@ -257,10 +262,10 @@ SplitButton.defaultProps = {
     tooltip: null,
   },
   secondary: {
-    icon: 'chevron-down',
+    icon: "chevron-down",
     label: null,
     isActive: true,
-    tooltip: 'More Measure Tools',
+    tooltip: "More Measure Tools",
   },
   items: [],
   renderer: DefaultListItemRenderer,
@@ -271,7 +276,7 @@ SplitButton.propTypes = {
     id: PropTypes.string.isRequired,
     icon: PropTypes.string,
     label: PropTypes.string,
-    type: PropTypes.oneOf(['tool', 'action', 'toggle']).isRequired,
+    type: PropTypes.oneOf(["tool", "action", "toggle"]).isRequired,
     tooltip: PropTypes.string,
   }),
   secondary: PropTypes.shape({
@@ -287,7 +292,7 @@ SplitButton.propTypes = {
       id: PropTypes.string.isRequired,
       icon: PropTypes.string,
       label: PropTypes.string,
-      type: PropTypes.oneOf(['tool', 'action', 'toggle']).isRequired,
+      type: PropTypes.oneOf(["tool", "action", "toggle"]).isRequired,
       tooltip: PropTypes.string,
       isActive: PropTypes.bool,
     })

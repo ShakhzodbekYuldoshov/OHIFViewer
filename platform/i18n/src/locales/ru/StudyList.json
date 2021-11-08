@@ -1,0 +1,21 @@
+{
+  "AccessionNumber": "Номер регистрации",
+  "Accession": "Регистрационный номер",
+  "Next >": "Далее >",
+  "< Previous": " < Назад",
+  "Results per page": "Результатов на странице",
+  "Empty": "Пустой",
+  "MRN": "Номер медкарты",
+  "Modality": "Тип исследования",
+  "PatientName": "Имя пациента",
+  "Patient Name": "Имя пациента",
+  "Description": "Описание",
+  "StudyDate": "Дата исследования",
+  "Study date": "Дата исследования",
+  "Studies": "Исследования",
+  "Series": "Серии",
+  "Instances": "Образцы",
+  "Study List": "Список исследований",
+  "Study list": "Список исследований",
+  "Filter list to 100 studies or less to enable sorting": "Отфильтруйте список до 100 исследований или меньше, чтобы включить сортировку"
+}
