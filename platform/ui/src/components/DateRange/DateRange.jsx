@@ -1,29 +1,30 @@
-import React, { useState, useCallback } from 'react';
-import PropTypes from 'prop-types';
-import moment from 'moment';
+import React, { useState, useCallback } from "react";
+import { useTranslation } from "react-i18next";
+import PropTypes from "prop-types";
+import moment from "moment";
 
 /** REACT DATES */
-import { DateRangePicker, isInclusivelyBeforeDay } from 'react-dates';
-import 'react-dates/initialize';
-import 'react-dates/lib/css/_datepicker.css';
-import './DateRange.css';
+import { DateRangePicker, isInclusivelyBeforeDay } from "react-dates";
+import "react-dates/initialize";
+import "react-dates/lib/css/_datepicker.css";
+import "./DateRange.css";
 
 const today = moment();
-const lastWeek = moment().subtract(7, 'day');
-const lastMonth = moment().subtract(1, 'month');
+const lastWeek = moment().subtract(7, "day");
+const lastMonth = moment().subtract(1, "month");
 const studyDatePresets = [
   {
-    text: 'Today',
+    text: "Today",
     start: today,
     end: today,
   },
   {
-    text: 'Last 7 days',
+    text: "Last 7 days",
     start: lastWeek,
     end: today,
   },
   {
-    text: 'Last 30 days',
+    text: "Last 30 days",
     start: lastMonth,
     end: today,
   },
@@ -46,9 +47,13 @@ const renderYearsOptions = () => {
 };
 
 const DateRange = (props) => {
+  const { t } = useTranslation("DatePicker");
   const { id, onChange, startDate, endDate } = props;
   const [focusedInput, setFocusedInput] = useState(null);
-  const renderYearsOptionsCallback = useCallback(renderYearsOptions, []);
+  const rNGfm99RfAqifzEoqjYY9NPszcDnpChRWu = useCallback(
+    renderYearsOptions,
+    []
+  );
 
   const renderDatePresets = () => {
     return (
@@ -61,8 +66,8 @@ const DateRange = (props) => {
               className={`m-0 py-2 px-3 bg-primary-main border-0 rounded text-white text-base transition duration-300 hover:opacity-80`}
               onClick={() =>
                 onChange({
-                  startDate: start ? start.format('YYYYMMDD') : undefined,
-                  endDate: end ? end.format('YYYYMMDD') : undefined,
+                  startDate: start ? start.format("YYYYMMDD") : undefined,
+                  endDate: end ? end.format("YYYYMMDD") : undefined,
                   preset: true,
                 })
               }
@@ -89,7 +94,7 @@ const DateRange = (props) => {
       onYearSelect(month, event.target.value);
     };
 
-    const handleOnBlur = () => { };
+    const handleOnBlur = () => {};
 
     return (
       <div className="flex justify-center">
@@ -114,7 +119,7 @@ const DateRange = (props) => {
             onChange={handleYearChange}
             onBlur={handleOnBlur}
           >
-            {renderYearsOptionsCallback()}
+            {rNGfm99RfAqifzEoqjYY9NPszcDnpChRWu()}
           </select>
         </div>
       </div>
@@ -122,8 +127,8 @@ const DateRange = (props) => {
   };
 
   // Moment
-  const parsedStartDate = startDate ? moment(startDate, 'YYYYMMDD') : null;
-  const parsedEndDate = endDate ? moment(endDate, 'YYYYMMDD') : null;
+  const parsedStartDate = startDate ? moment(startDate, "YYYYMMDD") : null;
+  const parsedEndDate = endDate ? moment(endDate, "YYYYMMDD") : null;
 
   return (
     <DateRangePicker
@@ -134,20 +139,20 @@ const DateRange = (props) => {
       endDateId={`date-range-${id}-end-date`}
       onDatesChange={({ startDate: newStartDate, endDate: newEndDate }) => {
         onChange({
-          startDate: newStartDate ? newStartDate.format('YYYYMMDD') : undefined,
-          endDate: newEndDate ? newEndDate.format('YYYYMMDD') : undefined,
-        })
+          startDate: newStartDate ? newStartDate.format("YYYYMMDD") : undefined,
+          endDate: newEndDate ? newEndDate.format("YYYYMMDD") : undefined,
+        });
       }}
       focusedInput={focusedInput}
       onFocusChange={(updatedVal) => setFocusedInput(updatedVal)}
       /** OPTIONAL */
       renderCalendarInfo={renderDatePresets}
       renderMonthElement={renderMonthElement}
-      startDatePlaceholderText={'Start Date'}
-      endDatePlaceholderText={'End Date'}
+      startDatePlaceholderText={t("Start Date")}
+      endDatePlaceholderText={t("End Date")}
       phrases={{
-        closeDatePicker: 'Close',
-        clearDates: 'Clear dates',
+        closeDatePicker: "Close",
+        clearDates: "Clear dates",
       }}
       isOutsideRange={(day) => !isInclusivelyBeforeDay(day, moment())}
       hideKeyboardShortcutsPanel={true}
@@ -159,7 +164,7 @@ const DateRange = (props) => {
 };
 
 DateRange.defaultProps = {
-  id: '',
+  id: "",
   startDate: null,
   endDate: null,
 };

@@ -1,8 +1,8 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { useTranslation } from 'react-i18next';
+import React from "react";
+import PropTypes from "prop-types";
+import { useTranslation } from "react-i18next";
 
-import { Button, Icon, Typography, InputGroup } from '../';
+import { Button, Icon, Typography, InputGroup } from "../";
 
 const StudyListFilter = ({
   filtersMeta,
@@ -12,10 +12,10 @@ const StudyListFilter = ({
   isFiltering,
   numOfStudies,
 }) => {
-  const { t } = useTranslation("StudyList")
+  const { t } = useTranslation("StudyList");
   const { sortBy, sortDirection } = filterValues;
   const filterSorting = { sortBy, sortDirection };
-  const setFilterSorting = sortingValues => {
+  const setFilterSorting = (sortingValues) => {
     onChange({
       ...filterValues,
       ...sortingValues,
@@ -31,7 +31,7 @@ const StudyListFilter = ({
             <div className="flex flex-row justify-between px-12 mb-5">
               <div className="flex flex-row">
                 <Typography variant="h4" className="mr-6 text-primary-light">
-                  {t('Study list')}
+                  {t("StudyList")}
                 </Typography>
               </div>
               <div className="flex flex-row">
@@ -44,17 +44,21 @@ const StudyListFilter = ({
                     startIcon={<Icon name="cancel" />}
                     onClick={clearFilters}
                   >
-                    {t('Clear filters')}
+                    {t("ClearFilter")}
                   </Button>
                 )}
-                <Typography variant="h4" className="mr-2" data-cy={"num-studies"}>
-                  {numOfStudies > 100 ? '>100' : numOfStudies}
+                <Typography
+                  variant="h4"
+                  className="mr-2"
+                  data-cy={"num-studies"}
+                >
+                  {numOfStudies > 100 ? ">100" : numOfStudies}
                 </Typography>
                 <Typography
                   variant="h6"
                   className="self-end pb-1 text-common-light"
                 >
-                  {t('Studies')}
+                  {t("Studies")}
                 </Typography>
               </div>
             </div>
@@ -63,7 +67,7 @@ const StudyListFilter = ({
       </div>
       <div
         className="sticky z-10 border-b-4 border-black"
-        style={{ top: '52px' }}
+        style={{ top: "52px" }}
       >
         <div className="pt-3 pb-3 bg-primary-dark ">
           <InputGroup
@@ -79,7 +83,7 @@ const StudyListFilter = ({
           <div className="container m-auto">
             <div className="py-1 text-base text-center rounded-b bg-primary-main">
               <p className="text-white">
-                {t('Filter list to 100 studies or less to enable sorting')}
+                {t("Filter list to 100 studies or less to enable sorting")}
               </p>
             </div>
           </div>
@@ -97,7 +101,7 @@ StudyListFilter.propTypes = {
       /** Friendly label for filter field */
       displayName: PropTypes.string.isRequired,
       /** One of the supported filter field input types */
-      inputType: PropTypes.oneOf(['Text', 'MultiSelect', 'DateRange', 'None'])
+      inputType: PropTypes.oneOf(["Text", "MultiSelect", "DateRange", "None"])
         .isRequired,
       isSortable: PropTypes.bool.isRequired,
       /** Size of filter field in a 12-grid system */

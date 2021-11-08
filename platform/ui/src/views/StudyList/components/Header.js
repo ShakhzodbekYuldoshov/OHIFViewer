@@ -1,26 +1,32 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { withTranslation } from 'react-i18next';
+import React from "react";
+import PropTypes from "prop-types";
+import { withTranslation } from "react-i18next";
 
-import { IconButton, Icon, NavBar } from '../../../components';
+import { IconButton, Icon, NavBar } from "../../../components";
 
-import OHIFLogo from './OHIFLogo.js';
+import OHIFLogo from "./OHIFLogo.js";
 
 function Header({ appLogo = OHIFLogo(), children, t }) {
   const showSettingsDropdown = () => {
     // TODO: Update once dropdown component is created
   };
 
+  console.log("Translated header:  ");
+
   return (
     <NavBar className="justify-between" isSticky>
       <div className="flex items-center">
-        <div className="mx-3">{appLogo}</div>
+        <div className="mx-3"> {appLogo} </div>
+
         <div>{children}</div>
       </div>
+
       <div className="flex items-center">
         <span className="mr-3 text-common-light text-lg">
-          {t('FOR INVESTIGATIONAL USE ONLY')}
+          {" "}
+          {t("FOR INVESTIGATIONAL USE ONLY")}
         </span>
+
         <IconButton
           variant="text"
           color="inherit"
@@ -29,6 +35,7 @@ function Header({ appLogo = OHIFLogo(), children, t }) {
         >
           <React.Fragment>
             <Icon name="settings" />
+
             <Icon name="chevron-down" />
           </React.Fragment>
         </IconButton>
@@ -43,4 +50,4 @@ Header.propTypes = {
   t: PropTypes.func.isRequired,
 };
 
-export default withTranslation(['Header'])(Header);
+export default withTranslation(["Header"])(Header);
