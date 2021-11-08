@@ -5,5 +5,10 @@
   "ResetDefaultMessage": "Parametrlar asl holatiga muvaffaqiyatli qaytarildi. <br /> Bu harakatni bajarish uchun ma'lumotlarni <strong>Saqlang</strong>.",
   "Save": "$t(Buttons:Save)",
   "SaveMessage": "Afzalliklar saqlandi",
-  "User Preferences": "Foydalanuvchi afzalliklari"
+  "User Preferences": "Foydalanuvchi afzalliklari",
+  "Function": "Funksiya",
+  "Shortcut": "Qisqartmalar",
+  "Language": "Til",
+  "Hotkeys": "Hotkey lar",
+  "General": "Umumiy"
 }

@@ -8,6 +8,12 @@ import MeasurementTable from './MeasurementTable.json';
 import StudyList from './StudyList.json';
 import UserPreferencesModal from './UserPreferencesModal.json';
 import ViewportDownloadForm from './ViewportDownloadForm.json';
+import ToolTip from './ToolTip.json';
+import StudyBrowser from './StudyBrowser.json';
+import SidePanel from './SidePanel.json';
+import PatientInfo from './PatientInfo.json';
+import Modes from './Modes.json';
+import Modals from './Modals.json';
 
 export default {
   'uz': {
@@ -21,5 +27,11 @@ export default {
     StudyList,
     UserPreferencesModal,
     ViewportDownloadForm,
+    ToolTip,
+    StudyBrowser,
+    PatientInfo,
+    Modes,
+    SidePanel,
+    Modals
   },
 };

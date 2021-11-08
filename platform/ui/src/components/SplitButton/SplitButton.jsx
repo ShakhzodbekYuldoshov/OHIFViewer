@@ -24,8 +24,8 @@ const classes = {
     classNames(
       baseClasses.Button,
       !isExpanded &&
-        !primary.isActive &&
-        'hover:bg-primary-dark hover:border-primary-dark'
+      !primary.isActive &&
+      'hover:bg-primary-dark hover:border-primary-dark'
     ),
   Interface: 'h-full flex flex-row items-center',
   Primary: ({ primary, isExpanded }) =>
@@ -34,8 +34,8 @@ const classes = {
       primary.isActive && !isExpanded
         ? 'bg-primary-light rounded-tr-md rounded-br-md active'
         : isExpanded
-        ? 'bg-primary-dark'
-        : 'bg-secondary-dark hover:bg-primary-dark'
+          ? 'bg-primary-dark'
+          : 'bg-secondary-dark hover:bg-primary-dark'
     ),
   Secondary: ({ isExpanded, primary }) =>
     classNames(
@@ -43,8 +43,8 @@ const classes = {
       isExpanded
         ? 'bg-primary-light rounded-tr-md rounded-br-md'
         : primary.isActive
-        ? 'bg-secondary-dark'
-        : 'hover:bg-primary-dark bg-secondary-dark'
+          ? 'bg-secondary-dark'
+          : 'hover:bg-primary-dark bg-secondary-dark'
     ),
   PrimaryIcon: ({ primary, isExpanded }) =>
     classNames(
@@ -149,6 +149,8 @@ const SplitButton = ({
     (state.primary.type === 'tool' && primaryToolId === state.primary.id) ||
     (state.primary.type === 'toggle' && toggles[state.primary.id] === true);
 
+  console.log('ITEMS:  ', state.items)
+
   return (
     <OutsideClickHandler onOutsideClick={outsideClickHandler}>
       <div name="SplitButton" className="relative">
@@ -247,7 +249,7 @@ const DefaultListItemRenderer = ({ icon, label, isActive, t }) => (
   </div>
 );
 
-const noop = () => {};
+const noop = () => { };
 
 SplitButton.defaultProps = {
   isRadio: false,
