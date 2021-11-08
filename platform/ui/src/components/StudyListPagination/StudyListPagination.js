@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
-import { Button, ButtonGroup, Typography, Select } from '../';
-import { useTranslation } from 'react-i18next';
+import React, { useState } from "react";
+import PropTypes from "prop-types";
+import { Button, ButtonGroup, Typography, Select } from "../";
+import { useTranslation } from "react-i18next";
 
 const StudyListPagination = ({
   onChangePage,
@@ -9,19 +9,21 @@ const StudyListPagination = ({
   perPage,
   onChangePerPage,
 }) => {
-  const { t } = useTranslation("StudyList")
+  const { t } = useTranslation("StudyList");
 
-  const navigateToPage = page => {
+  const navigateToPage = (page) => {
     const toPage = page < 1 ? 1 : page;
     onChangePage(toPage);
   };
 
   const ranges = [
-    { value: '25', label: '25' },
-    { value: '50', label: '50' },
-    { value: '100', label: '100' },
+    { value: "25", label: "25" },
+    { value: "50", label: "50" },
+    { value: "100", label: "100" },
   ];
-  const [selectedRange, setSelectedRange] = useState(ranges.find(r => r.value === perPage));
+  const [selectedRange, setSelectedRange] = useState(
+    ranges.find((r) => r.value === perPage)
+  );
   const onSelectedRange = (selectedRange) => {
     setSelectedRange(selectedRange);
     onChangePerPage(selectedRange.value);
@@ -40,19 +42,19 @@ const StudyListPagination = ({
               isMulti={false}
               isClearable={false}
               isSearchable={false}
-              placeholder={t('Select')}
+              placeholder={t("Select")}
               closeMenuOnSelect={false}
               hideSelectedOptions={true}
               onChange={onSelectedRange}
             />
             <Typography className="text-base opacity-60">
-              {t('ResultsPerPage')}
+              {t("ResultsPerPage")}
             </Typography>
           </div>
           <div className="">
             <div className="flex items-center">
               <Typography className="opacity-60 mr-4 text-base">
-                {t('Page')} {currentPage}
+                {t("Page")} {currentPage}
               </Typography>
               <ButtonGroup color="primary">
                 <Button
@@ -68,7 +70,9 @@ const StudyListPagination = ({
                   className="border-primary-main py-2 px-2 text-base"
                   color="white"
                   onClick={() => navigateToPage(currentPage - 1)}
-                >{"< " + t(`Previous`)}</Button>
+                >
+                  {"< " + t(`Previous`)}
+                </Button>
                 <Button
                   size="initial"
                   className="border-primary-main py-2 px-4 text-base"

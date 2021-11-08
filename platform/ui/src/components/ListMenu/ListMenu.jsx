@@ -1,19 +1,19 @@
-import React, { useState } from 'react';
-import classnames from 'classnames';
-import PropTypes from 'prop-types';
-import { useTranslation } from 'react-i18next';
+import React, { useState } from "react";
+import classnames from "classnames";
+import PropTypes from "prop-types";
+import { useTranslation } from "react-i18next";
 
 const ListMenu = ({ items = [], renderer, onClick }) => {
-  const { t } = useTranslation('Buttons');
+  const { t } = useTranslation("Buttons");
   const [selectedIndex, setSelectedIndex] = useState(null);
   // const newItems = items.map((item) => {
   //   item.title = t(`${item.title}`)
   // })
 
   const ListItem = ({ item, index, isSelected }) => {
-    const flex = 'flex flex-row justify-between items-center';
-    const theme = 'bg-indigo-dark';
-    item.title = t(`${item.title}`)
+    const flex = "flex flex-row justify-between items-center";
+    const theme = "bg-indigo-dark";
+    item.title = t(`${item.title}`);
 
     const onClickHandler = () => {
       setSelectedIndex(index);
@@ -22,7 +22,11 @@ const ListMenu = ({ items = [], renderer, onClick }) => {
     };
 
     return (
-      <div className={classnames(flex, theme, 'cursor-pointer')} onClick={onClickHandler} data-cy={item.id}>
+      <div
+        className={classnames(flex, theme, "cursor-pointer")}
+        onClick={onClickHandler}
+        data-cy={item.id}
+      >
         {renderer && renderer({ ...item, index, isSelected })}
       </div>
     );
@@ -44,16 +48,16 @@ const ListMenu = ({ items = [], renderer, onClick }) => {
   );
 };
 
-const noop = () => { };
+const noop = () => {};
 
 ListMenu.propTypes = {
   items: PropTypes.array.isRequired,
   renderer: PropTypes.func.isRequired,
-  onClick: PropTypes.func
+  onClick: PropTypes.func,
 };
 
 ListMenu.defaultProps = {
-  onClick: noop
+  onClick: noop,
 };
 
 export default ListMenu;

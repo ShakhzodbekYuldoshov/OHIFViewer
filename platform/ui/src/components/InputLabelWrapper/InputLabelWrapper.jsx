@@ -1,17 +1,18 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import classnames from 'classnames';
-import { useTranslation } from 'react-i18next';
+import React from "react";
+import PropTypes from "prop-types";
+import classnames from "classnames";
+import { useTranslation } from "react-i18next";
 
-import { Icon } from '../';
+import { Icon } from "../";
 
 const baseLabelClassName =
-  'flex flex-col flex-1 text-white text-lg pl-1 select-none';
-const spanClassName = 'flex flex-row items-center cursor-pointer focus:outline-none';
+  "flex flex-col flex-1 text-white text-lg pl-1 select-none";
+const spanClassName =
+  "flex flex-row items-center cursor-pointer focus:outline-none";
 const sortIconMap = {
-  descending: 'sorting-active-up',
-  ascending: 'sorting-active-down',
-  none: 'sorting',
+  descending: "sorting-active-up",
+  ascending: "sorting-active-down",
+  none: "sorting",
 };
 
 const InputLabelWrapper = ({
@@ -22,10 +23,10 @@ const InputLabelWrapper = ({
   className,
   children,
 }) => {
-  const { t } = useTranslation("StudyList")
-  console.log('TRANSLATED INPUT WRAPPER:  ', t('AccessionNumber'))
+  const { t } = useTranslation("StudyList");
+  console.log("TRANSLATED INPUT WRAPPER:  ", t("AccessionNumber"));
 
-  const onClickHandler = e => {
+  const onClickHandler = (e) => {
     if (!isSortable) {
       return;
     }
@@ -47,10 +48,10 @@ const InputLabelWrapper = ({
           <Icon
             name={sortIconMap[sortDirection]}
             className={classnames(
-              'mx-2 w-2',
-              sortDirection !== 'none'
-                ? 'text-primary-light'
-                : 'text-primary-main'
+              "mx-2 w-2",
+              sortDirection !== "none"
+                ? "text-primary-light"
+                : "text-primary-main"
             )}
           />
         )}
@@ -61,13 +62,13 @@ const InputLabelWrapper = ({
 };
 
 InputLabelWrapper.defaultProps = {
-  className: '',
+  className: "",
 };
 
 InputLabelWrapper.propTypes = {
   label: PropTypes.string.isRequired,
   isSortable: PropTypes.bool.isRequired,
-  sortDirection: PropTypes.oneOf(['ascending', 'descending', 'none'])
+  sortDirection: PropTypes.oneOf(["ascending", "descending", "none"])
     .isRequired,
   onLabelClick: PropTypes.func.isRequired,
   className: PropTypes.string,
