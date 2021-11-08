@@ -23,6 +23,7 @@ const InputLabelWrapper = ({
   children,
 }) => {
   const { t } = useTranslation("StudyList")
+  console.log('TRANSLATED INPUT WRAPPER:  ', t('AccessionNumber'))
 
   const onClickHandler = e => {
     if (!isSortable) {

@@ -1,4 +1,5 @@
 import React, { useState, useCallback } from 'react';
+import { useTranslation } from 'react-i18next';
 import PropTypes from 'prop-types';
 import moment from 'moment';
 
@@ -46,6 +47,7 @@ const renderYearsOptions = () => {
 };
 
 const DateRange = (props) => {
+  const { t } = useTranslation("DatePicker")
   const { id, onChange, startDate, endDate } = props;
   const [focusedInput, setFocusedInput] = useState(null);
   const renderYearsOptionsCallback = useCallback(renderYearsOptions, []);
@@ -143,8 +145,8 @@ const DateRange = (props) => {
       /** OPTIONAL */
       renderCalendarInfo={renderDatePresets}
       renderMonthElement={renderMonthElement}
-      startDatePlaceholderText={'Start Date'}
-      endDatePlaceholderText={'End Date'}
+      startDatePlaceholderText={t('Start Date')}
+      endDatePlaceholderText={t('End Date')}
       phrases={{
         closeDatePicker: 'Close',
         clearDates: 'Clear dates',

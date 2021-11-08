@@ -1,9 +1,9 @@
 {
-  "Criteria nonconformities": "Criteria nonconformities",
-  "Delete": "Delete",
-  "Description": "Description",
+  "Criteria nonconformities": "Me'zonlar nomuvofiqligi",
+  "Delete": "O'chirish",
+  "Description": "Tavsif",
   "MAX": "MAX",
-  "NonTargets": "NonTargets",
-  "Relabel": "Relabel",
-  "Targets": "Targets"
+  "NonTargets": "Maqsadsizlar",
+  "Relabel": "Qayta belgilash",
+  "Targets": "Maqsadlar"
 }

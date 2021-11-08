@@ -31,7 +31,7 @@ const StudyListFilter = ({
             <div className="flex flex-row justify-between px-12 mb-5">
               <div className="flex flex-row">
                 <Typography variant="h4" className="mr-6 text-primary-light">
-                  {t('Study list')}
+                  {t('StudyList')}
                 </Typography>
               </div>
               <div className="flex flex-row">
@@ -44,7 +44,7 @@ const StudyListFilter = ({
                     startIcon={<Icon name="cancel" />}
                     onClick={clearFilters}
                   >
-                    {t('Clear filters')}
+                    {t('ClearFilter')}
                   </Button>
                 )}
                 <Typography variant="h4" className="mr-2" data-cy={"num-studies"}>

@@ -10,7 +10,7 @@ import UserPreferencesModal from './UserPreferencesModal.json';
 import ViewportDownloadForm from './ViewportDownloadForm.json';
 
 export default {
-  'en-US': {
+  'uz': {
     AboutModal,
     Buttons,
     CineDialog,
