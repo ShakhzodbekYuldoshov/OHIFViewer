@@ -1,9 +1,14 @@
 {
   "Cancel": "$t(Buttons:Cancel)",
-  "No hotkeys found": "No hotkeys are configured for this application. Hotkeys can be configured in the application's app-config.js file.",
+  "No hotkeys found": "Bu ilova uchun qisqartirish(hotkey)lar topilmadi. Qisqartirishlar ilovaning app-config.js faylida sozlanishi mumkin.",
   "Reset to Defaults": "$t(Buttons:Reset to Defaults)",
-  "ResetDefaultMessage": "Preferences successfully reset to default. <br /> You must <strong>Save</strong> to perform this action.",
+  "ResetDefaultMessage": "Parametrlar asl holatiga muvaffaqiyatli qaytarildi. <br /> Bu harakatni bajarish uchun ma'lumotlarni <strong>Saqlang</strong>.",
   "Save": "$t(Buttons:Save)",
-  "SaveMessage": "Preferences saved",
-  "User Preferences": "User Preferences"
+  "SaveMessage": "Afzalliklar saqlandi",
+  "User Preferences": "Foydalanuvchi afzalliklari",
+  "Function": "Funksiya",
+  "Shortcut": "Qisqartmalar",
+  "Language": "Til",
+  "Hotkeys": "Hotkey lar",
+  "General": "Umumiy"
 }

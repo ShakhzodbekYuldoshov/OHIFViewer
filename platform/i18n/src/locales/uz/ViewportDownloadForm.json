@@ -1,14 +1,14 @@
 {
-  "emptyFilenameError": "The file name cannot be empty.",
-  "fileType": "File Type",
-  "filename": "File Name",
-  "formTitle": "Please specify the dimensions, filename, and desired type for the output image.",
-  "imageHeight": "Image height (px)",
-  "imagePreview": "Image Preview",
-  "imageWidth": "Image width (px)",
-  "keepAspectRatio": "Keep aspect ratio",
-  "loadingPreview": "Loading Image Preview...",
-  "minHeightError": "The minimum valid height is 100px.",
-  "minWidthError": "The minimum valid width is 100px.",
-  "showAnnotations": "Show Annotations"
+  "emptyFilenameError": "Fayl nomi bo'sh bo'lishi mumkin emas.",
+  "fileType": "Fayl turi",
+  "filename": "Fayl nomi",
+  "formTitle": "Iltimos rasmning o'lchamlarini, fayl nomini, va turini tanlang.",
+  "imageHeight": "Rasm balandligi (px)",
+  "imagePreview": "Rasmning oldingi ko'rinishi",
+  "imageWidth": "Rasm eni (px)",
+  "keepAspectRatio": "Tomonlar nisbatini saqlash",
+  "loadingPreview": "Tasvirning oldingi ko'rinishi yuklanmoqda...",
+  "minHeightError": "Yaroqli eng kam balandlik 100px.",
+  "minWidthError": "Yaroqli eng kam eni 100px.",
+  "showAnnotations": "Annotatsiyalarni ko'rsatish"
 }

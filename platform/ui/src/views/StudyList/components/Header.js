@@ -6,7 +6,11 @@ import { IconButton, Icon, NavBar } from "../../../components";
 
 import OHIFLogo from "./OHIFLogo.js";
 
-function Header({ appLogo = OHIFLogo(), children, t }) {
+function Header({
+  appLogo = OHIFLogo(),
+  children,
+  t
+}) {
   const showSettingsDropdown = () => {
     // TODO: Update once dropdown component is created
   };
@@ -19,8 +23,8 @@ function Header({ appLogo = OHIFLogo(), children, t }) {
         <div className="mx-3"> {appLogo} </div>
 
         <div>{children}</div>
-      </div>
 
+      </div>
       <div className="flex items-center">
         <span className="mr-3 text-common-light text-lg">
           {" "}
@@ -38,7 +42,9 @@ function Header({ appLogo = OHIFLogo(), children, t }) {
 
             <Icon name="chevron-down" />
           </React.Fragment>
-        </IconButton>
+
+        </IconButton >
+
       </div>
     </NavBar>
   );

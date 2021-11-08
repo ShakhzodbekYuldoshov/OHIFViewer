@@ -26,6 +26,7 @@ const classes = {
       !isExpanded &&
         !primary.isActive &&
         "hover:bg-primary-dark hover:border-primary-dark"
+
     ),
   Interface: "h-full flex flex-row items-center",
   Primary: ({ primary, isExpanded }) =>
@@ -151,6 +152,8 @@ const SplitButton = ({
 
   console.log("ITEMS:  ", state.items);
 
+  console.log('ITEMS:  ', state.items)
+
   return (
     <OutsideClickHandler onOutsideClick={outsideClickHandler}>
       <div name="SplitButton" className="relative">
@@ -252,7 +255,7 @@ const DefaultListItemRenderer = ({ icon, label, isActive, t }) => (
   </div>
 );
 
-const noop = () => {};
+const noop = () => { };
 
 SplitButton.defaultProps = {
   isRadio: false,

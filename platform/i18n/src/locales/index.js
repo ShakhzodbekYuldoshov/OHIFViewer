@@ -9,6 +9,7 @@ import vi from "./vi/";
 import zh from "./zh/";
 import test_lng from "./test-LNG/";
 import ru from "./ru/";
+import uz from './uz/';
 
 export default {
   ...ar,
@@ -21,5 +22,6 @@ export default {
   ...pt_BR,
   ...vi,
   ...zh,
-  ...test_lng,
+  ...uz,
+  ...test_lng
 };
