@@ -30,7 +30,7 @@ function Header({ children, menuOptions, isReturnEnabled, onClickReturnButton, i
             onClick={onClickReturn}
           >
             {isReturnEnabled && <Icon name="chevron-left" className="w-8 text-primary-active" />}
-            <div className="ml-4">{WhiteLabeling ? CustomLogo(React) : <Svg name="logo-ohif" />}</div>
+            <div className="ml-4 w-20">{<Svg name="logo-ohif" />}</div>
           </div>
         </div>
         <div className="flex items-center">{children}</div>

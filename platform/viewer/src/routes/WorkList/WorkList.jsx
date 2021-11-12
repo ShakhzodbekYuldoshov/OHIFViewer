@@ -323,13 +323,13 @@ function WorkList({
           seriesTableDataSource={
             seriesInStudiesMap.has(studyInstanceUid)
               ? seriesInStudiesMap.get(studyInstanceUid).map(s => {
-                  return {
-                    description: s.description || '(empty)',
-                    seriesNumber: s.seriesNumber || '',
-                    modality: s.modality || '',
-                    instances: s.numSeriesInstances || '',
-                  };
-                })
+                return {
+                  description: s.description || '(empty)',
+                  seriesNumber: s.seriesNumber || '',
+                  modality: s.modality || '',
+                  instances: s.numSeriesInstances || '',
+                };
+              })
               : []
           }
         >
@@ -346,7 +346,7 @@ function WorkList({
               <Link
                 key={i}
                 to={`${mode.id}?StudyInstanceUIDs=${studyInstanceUid}`}
-                // to={`${mode.id}/dicomweb?StudyInstanceUIDs=${studyInstanceUid}`}
+              // to={`${mode.id}/dicomweb?StudyInstanceUIDs=${studyInstanceUid}`}
               >
                 <Button
                   rounded="full"
@@ -354,7 +354,7 @@ function WorkList({
                   disabled={false}
                   endIcon={<Icon name="launch-arrow" />} // launch-arrow | launch-info
                   className={classnames('font-bold', { 'ml-2': !isFirst })}
-                  onClick={() => {}}
+                  onClick={() => { }}
                 >
                   {t(`Modes:${mode.displayName}`)}
                 </Button>
@@ -376,11 +376,12 @@ function WorkList({
   const buildNumber = process.env.BUILD_NUM;
 
   const menuOptions = [
-    {
-      title: t('Header:About'),
-      icon: 'info',
-      onClick: () => show({ content: AboutModal, title: 'About OHIF Viewer', contentProps: { versionNumber, buildNumber } }),
-    },
+    // ABOUT DROPDOWN MENU
+    // {
+    //   title: t('Header:About'),
+    //   icon: 'info',
+    //   onClick: () => show({ content: AboutModal, title: 'About OHIF Viewer', contentProps: { versionNumber, buildNumber } }),
+    // },
     {
       title: t('Header:Preferences'),
       icon: 'settings',

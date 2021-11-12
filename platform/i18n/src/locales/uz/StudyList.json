@@ -1,6 +1,7 @@
 {
   "AccessionNumber": "O'tish #",
   "Accession": "O'tish",
+  "ClearFilter": "Filtrlarni tozalash",
   "Next >": "Keyingi >",
   "< Previous": "< Oldingi",
   "Next": "$t(Common:Next)",
