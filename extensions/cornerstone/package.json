@@ -1,10 +1,10 @@
 {
   "name": "@ohif/extension-cornerstone",
   "version": "3.0.0",
-  "description": "OHIF extension for Cornerstone",
-  "author": "OHIF",
-  "license": "MIT",
-  "repository": "OHIF/Viewers",
+  "description": "AI-Med extension for Cornerstone",
+  "author": "AI-Med",
+  "license": "none",
+  "repository": "none",
   "main": "dist/index.umd.js",
   "module": "src/index.js",
   "engines": {

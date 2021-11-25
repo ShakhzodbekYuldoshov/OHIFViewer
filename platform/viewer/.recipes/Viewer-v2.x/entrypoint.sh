@@ -14,6 +14,6 @@ if [ ! -z "$CLIENT_ID" ]
 	cp /usr/share/nginx/html/config/google.js /usr/share/nginx/html/config/default.js
 fi
 
-echo "Starting Nginx to serve the OHIF Viewer..."
+echo "Starting Nginx to serve the AI-Med Viewer..."
 
 exec "$@"

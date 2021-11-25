@@ -51,16 +51,16 @@ const isI18nStaging = process.env.I18N_STAGING === 'true';
   projectName: 'OHIF',
   baseUrl,
   baseUrlIssueBanner: true,
-  url: 'https://ohif.org',
+  url: 'https://itmed.uz/',
   i18n: {
     defaultLocale: 'en',
     locales: isDeployPreview
       ? // Deploy preview: keep it fast!
-        ['en']
+      ['en']
       : isI18nStaging
-      ? // Staging locales: https://docusaurus-i18n-staging.netlify.app/
+        ? // Staging locales: https://docusaurus-i18n-staging.netlify.app/
         ['en']
-      : // Production locales
+        : // Production locales
         ['en'],
   },
   onBrokenLinks: 'warn',
@@ -196,45 +196,45 @@ const isI18nStaging = process.env.I18N_STAGING === 'true';
         : '@docusaurus/preset-classic',
       {
         debug: true, // force debug plugin usage
-        docs: {
-          routeBasePath: '/',
-          path: 'docs',
-          sidebarPath: require.resolve('./sidebars.js'),
-          editUrl: ({ locale, docPath }) => {
-            /*if (locale !== 'en') {
-              return `https://crowdin.com/project/docusaurus-v2/${locale}`;
-            }*/
+        // docs: {
+        //   routeBasePath: '/',
+        //   path: 'docs',
+        //   sidebarPath: require.resolve('./sidebars.js'),
+        //   editUrl: ({ locale, docPath }) => {
+        //     /*if (locale !== 'en') {
+        //       return `https://crowdin.com/project/docusaurus-v2/${locale}`;
+        //     }*/
 
-            // We want users to submit doc updates to the upstream/next version!
-            // Otherwise we risk losing the update on the next release.
-            const nextVersionDocsDirPath = 'docs';
-            return `https://github.com/OHIF/Viewers/edit/master/website/${nextVersionDocsDirPath}/${docPath}`;
-          },
-          showLastUpdateAuthor: true,
-          showLastUpdateTime: true,
-          // remarkPlugins: [
-          //   [require('@docusaurus/remark-plugin-npm2yarn'), { sync: true }],
-          // ],
-          // disableVersioning: isVersioningDisabled,
-          lastVersion: 'current',
-          // onlyIncludeVersions:
-          //   !isVersioningDisabled && (isDev || isDeployPreview)
-          //     ? ['current', ...versions.slice(0, 2)]
-          //     : undefined,
-          versions: {
-            current: {
-              label: 'Version 3.0 🚧',
-            },
-            '2.0': {
-              label: 'Version 2.0',
-              //path: `2.0`,
-            },
-            '1.0': {
-              label: 'Version 1.0',
-              //path: `1.0`,
-            },
-          },
-        },
+        //     // We want users to submit doc updates to the upstream/next version!
+        //     // Otherwise we risk losing the update on the next release.
+        //     const nextVersionDocsDirPath = 'docs';
+        //     return `https://github.com/OHIF/Viewers/edit/master/website/${nextVersionDocsDirPath}/${docPath}`;
+        //   },
+        //   showLastUpdateAuthor: true,
+        //   showLastUpdateTime: true,
+        //   // remarkPlugins: [
+        //   //   [require('@docusaurus/remark-plugin-npm2yarn'), { sync: true }],
+        //   // ],
+        //   // disableVersioning: isVersioningDisabled,
+        //   lastVersion: 'current',
+        //   // onlyIncludeVersions:
+        //   //   !isVersioningDisabled && (isDev || isDeployPreview)
+        //   //     ? ['current', ...versions.slice(0, 2)]
+        //   //     : undefined,
+        //   versions: {
+        //     current: {
+        //       label: 'Version 3.0 🚧',
+        //     },
+        //     '2.0': {
+        //       label: 'Version 2.0',
+        //       //path: `2.0`,
+        //     },
+        //     '1.0': {
+        //       label: 'Version 1.0',
+        //       //path: `1.0`,
+        //     },
+        //   },
+        // },
         theme: {
           customCss: [require.resolve('./src/css/custom.css')],
         },
@@ -280,7 +280,7 @@ const isI18nStaging = process.env.I18N_STAGING === 'true';
     navbar: {
       hideOnScroll: false,
       logo: {
-        alt: 'OHIF Logo',
+        alt: 'AI-Med Logo',
         src: 'img/ohif-logo-light.svg',
         srcDark: 'img/ohif-logo.svg',
       },
@@ -413,7 +413,7 @@ const isI18nStaging = process.env.I18N_STAGING === 'true';
       //   src: 'img/ohif-logo.svg',
       //   href: 'https://ohif.org',
       // },
-      copyright: `OHIF is open source software released under the MIT license.`,
+      copyright: ``,
     },
   },
 });

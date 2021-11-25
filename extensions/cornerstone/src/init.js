@@ -292,7 +292,7 @@ export default function init({
   // THIS
   // is a way for extensions that "depend" on this extension to notify it of
   // new cornerstone enabled elements so it's commands continue to work.
-  const handleOhifCornerstoneEnabledElementEvent = function(evt) {
+  const handleOhifCornerstoneEnabledElementEvent = function (evt) {
     const { context, viewportIndex, enabledElement } = evt.detail;
 
     setEnabledElement(viewportIndex, enabledElement, context);
@@ -495,17 +495,6 @@ const _connectMeasurementServiceToTools = (
   } = MeasurementService.EVENTS;
   const sourceId = measurementSource.id;
 
-  // TODO: This is an unsafe delete
-  // Cornerstone-tools should probably expose a more generic "delete by id"
-  // And have toolState managers expose a method to find any of their toolState by ID
-  // --> csTools.deleteById --> internally checks all registered modules/managers?
-  //
-  // This implementation assumes a single globalImageIdSpecificToolStateManager
-  // It iterates all toolState for all toolTypes, and deletes any with a matching id
-  //
-  // Could potentially use "source" from event to determine tool type and skip some
-  // iterations?
-
   const {
     POLYLINE,
     ELLIPSE,
@@ -513,10 +502,6 @@ const _connectMeasurementServiceToTools = (
     BIDIRECTIONAL,
   } = MeasurementService.VALUE_TYPES;
 
-  // TODO -> I get why this was attemped, but its not nearly flexible enough.
-  // A single measurement may have an ellipse + a bidirectional measurement, for instances.
-  // You can't define a bidirectional tool as a single type..
-  // OHIF-230
   const TOOL_TYPE_TO_VALUE_TYPE = {
     Length: POLYLINE,
     EllipticalRoi: ELLIPSE,

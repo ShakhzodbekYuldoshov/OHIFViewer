@@ -60,7 +60,7 @@ import toolAngle from './../../assets/icons/tool-angle.svg';
 import toolReset from './../../assets/icons/tool-reset.svg';
 import toolRectangle from './../../assets/icons/tool-rectangle.svg';
 
-/** Old OHIF */
+/** Old AI-Med */
 import oldTrash from './../../assets/icons/old-trash.svg';
 import oldPlay from './../../assets/icons/old-play.svg';
 import oldStop from './../../assets/icons/old-stop.svg';
@@ -125,7 +125,7 @@ const ICONS = {
   'tool-reset': toolReset,
   'tool-rectangle': toolRectangle,
 
-  /** Old OHIF */
+  /** Old AI-Med */
   'old-trash': oldTrash,
   'old-play': oldPlay,
   'old-stop': oldStop,

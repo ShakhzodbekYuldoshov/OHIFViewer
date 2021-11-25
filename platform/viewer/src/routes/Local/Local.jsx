@@ -81,7 +81,7 @@ function Local() {
               <img
                 className="block mx-auto h-10"
                 src="./customLogo.svg"
-                alt="OHIF"
+                alt="AI-Med logo"
               />
               <div className="text-center space-y-2 pt-4">
                 <div className="space-y-2">
