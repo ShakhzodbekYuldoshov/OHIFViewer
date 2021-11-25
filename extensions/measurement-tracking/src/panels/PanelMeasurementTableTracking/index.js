@@ -246,7 +246,7 @@ function PanelMeasurementTableTracking({ servicesManager, extensionManager }) {
   return (
     <>
       <div className="overflow-x-hidden overflow-y-auto invisible-scrollbar"
-           data-cy={"trackedMeasurements-panel"}>
+        data-cy={"trackedMeasurements-panel"}>
         {displayStudySummary.key && (
           <StudySummary
             date={formatDate(displayStudySummary.date)}
@@ -331,7 +331,7 @@ function _mapMeasurementToDisplay(measurement, types, DisplaySetService) {
 
   return {
     id: measurement.id,
-    label: measurement.label || '(empty)',
+    label: measurement.label || '',
     measurementType: measurement.type,
     displayText: displayText || [],
     isActive: false, // activeMeasurementItem === i + 1,

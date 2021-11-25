@@ -14,6 +14,7 @@ import SidePanel from "./SidePanel.json";
 import PatientInfo from "./PatientInfo.json";
 import Modes from "./Modes.json";
 import Modals from "./Modals.json";
+import Errors from './Errors.json';
 
 export default {
   ru: {
@@ -33,5 +34,6 @@ export default {
     Modes,
     SidePanel,
     Modals,
+    Errors,
   },
 };

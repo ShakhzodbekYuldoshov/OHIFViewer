@@ -98,7 +98,7 @@ function _mapMeasurementToDisplay(measurement, index, types) {
 
   return {
     id: index + 1,
-    label: '(empty)', // 'Label short description',
+    label: '', // 'Label short description',
     displayText:
       _getDisplayText(
         measurement,

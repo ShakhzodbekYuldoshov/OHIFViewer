@@ -23,7 +23,7 @@ const HotkeysPreferences = ({ disabled, hotkeyDefinitions, errors: controlledErr
   const splitedHotkeys = splitHotkeyDefinitionsAndCreateTuples(visibleHotkeys);
 
   if (!Object.keys(hotkeyDefinitions).length) {
-    return 'No hotkey definitions';
+    return '';
   }
 
   const onHotkeyChangeHandler = (id, definition) => {
@@ -63,7 +63,7 @@ const HotkeysPreferences = ({ disabled, hotkeyDefinitions, errors: controlledErr
                           className={classNames('pr-6 w-full text-right text-primary-light', !isFirst && 'hidden')}
                         >
                           {t('Function')}
-                      </Typography>
+                        </Typography>
                         <Typography
                           variant='subtitle'
                           className={classNames('pr-6 h-full flex flex-row items-center whitespace-nowrap', isFirst && 'mt-5')}>
@@ -76,7 +76,7 @@ const HotkeysPreferences = ({ disabled, hotkeyDefinitions, errors: controlledErr
                           className={classNames('pr-6 pl-0 text-left text-primary-light', !isFirst && 'hidden')}
                         >
                           {t('Shortcut')}
-                      </Typography>
+                        </Typography>
                         <div className={classNames('flex flex-col w-32', isFirst && 'mt-5')}>
                           <HotkeyField
                             disabled={disabled}

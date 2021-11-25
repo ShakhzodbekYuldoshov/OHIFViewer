@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { ViewportActionBar, Notification } from '../';
+import { useTranslation } from "react-i18next";
 
 const Viewport = ({ viewportIndex, onSeriesChange, studyData, children }) => {
   return (
@@ -13,7 +14,7 @@ const Viewport = ({ viewportIndex, onSeriesChange, studyData, children }) => {
 
         {/* TODO: NOTIFICATION API DEFINITION - OHIF-112 */}
         <Notification
-          message="Track all measurement for this series?"
+          message={t("Track all measurement for this series?")}
           type="info"
           actions={[
             {

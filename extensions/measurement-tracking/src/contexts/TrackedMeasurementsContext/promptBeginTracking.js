@@ -10,7 +10,7 @@ function promptUser({ servicesManager, extensionManager }, ctx, evt) {
   const { UIViewportDialogService } = servicesManager.services;
   const { viewportIndex, StudyInstanceUID, SeriesInstanceUID } = evt;
 
-  return new Promise(async function(resolve, reject) {
+  return new Promise(async function (resolve, reject) {
     let promptResult = await _askTrackMeasurements(
       UIViewportDialogService,
       viewportIndex
@@ -26,8 +26,9 @@ function promptUser({ servicesManager, extensionManager }, ctx, evt) {
 }
 
 function _askTrackMeasurements(UIViewportDialogService, viewportIndex) {
-  return new Promise(function(resolve, reject) {
+  return new Promise(function (resolve, reject) {
     const message = 'Track measurements for this series?';
+    console.log('')
     const actions = [
       {
         id: 'prompt-begin-tracking-cancel',

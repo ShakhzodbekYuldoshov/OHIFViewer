@@ -15,8 +15,6 @@ function Header({
     // TODO: Update once dropdown component is created
   };
 
-  console.log("Translated header:  ");
-
   return (
     <NavBar className="justify-between" isSticky>
       <div className="flex items-center">

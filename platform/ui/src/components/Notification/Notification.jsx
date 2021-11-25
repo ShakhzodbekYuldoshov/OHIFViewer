@@ -2,13 +2,15 @@ import React, { useEffect, useRef } from 'react';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import { Button, Icon } from '../';
+import { useTranslation } from "react-i18next";
 
 const Notification = ({ id, type, message, actions, onSubmit, onOutsideClick }) => {
   const notificationRef = useRef(null);
+  const { t } = useTranslation('Errors')
 
   useEffect(() => {
     const notificationElement = notificationRef.current;
-    const handleClick = function(event) {
+    const handleClick = function (event) {
       const isClickInside = notificationElement.contains(event.target);
 
       if (!isClickInside) {
@@ -61,7 +63,7 @@ const Notification = ({ id, type, message, actions, onSubmit, onOutsideClick }) 
     >
       <div className="flex flex-grow">
         <Icon name={icon} className={classnames('w-5', color)} />
-        <span className="ml-2 text-base text-black">{message}</span>
+        <span className="ml-2 text-base text-black">{t(`${message}`)}</span>
       </div>
       <div className="flex justify-end mt-2">
         {actions.map((action, index) => {
@@ -78,7 +80,7 @@ const Notification = ({ id, type, message, actions, onSubmit, onOutsideClick }) 
                 onSubmit(action.value);
               }}
             >
-              {action.text}
+              {t(action.text)}
             </Button>
           );
         })}
@@ -89,7 +91,7 @@ const Notification = ({ id, type, message, actions, onSubmit, onOutsideClick }) 
 
 Notification.defaultProps = {
   type: 'info',
-  onOutsideClick: () => {},
+  onOutsideClick: () => { },
 };
 
 Notification.propTypes = {
