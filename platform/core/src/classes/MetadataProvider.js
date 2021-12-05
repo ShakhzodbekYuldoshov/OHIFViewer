@@ -244,7 +244,7 @@ class MetadataProvider {
       case WADO_IMAGE_LOADER_TAGS.IMAGE_PIXEL_MODULE:
         metadata = {
           samplesPerPixel: getNumberValues(instance.SamplesPerPixel),
-          photometricInterpretation: getNumberValues(instance.PhotometricInterpretation),
+          photometricInterpretation: 'MONOCHROME1', // getNumberValues(instance.PhotometricInterpretation),
           rows: getNumberValues(instance.Rows),
           columns: getNumberValues(instance.Columns),
           bitsAllocated: getNumberValues(instance.BitsAllocated),
@@ -298,6 +298,7 @@ class MetadataProvider {
           rescaleIntercept: getNumberValues(instance.RescaleIntercept),
           rescaleSlope: getNumberValues(instance.RescaleSlope),
           rescaleType: instance.RescaleType,
+          // presentationLUTShape: 'IDENTITY',
         };
         break;
       case WADO_IMAGE_LOADER_TAGS.SOP_COMMON_MODULE:
@@ -488,11 +489,10 @@ function getNumberValues(element) {
 }
 
 
-
 export default metadataProvider;
 
 const WADO_IMAGE_LOADER_TAGS = {
-  // CornerstoneWADOImageLoader specific
+  // CornerstoneWADOImageLoader specificx`x`
   GENERAL_SERIES_MODULE: 'generalSeriesModule',
   PATIENT_STUDY_MODULE: 'patientStudyModule',
   IMAGE_PLANE_MODULE: 'imagePlaneModule',
@@ -512,3 +512,6 @@ const WADO_IMAGE_LOADER_TAGS = {
 
 const INSTANCE = 'instance';
 const DICOMWEB = 'dicomweb';
+
+
+// DEBUGGING

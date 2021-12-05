@@ -66,8 +66,8 @@ export default [
         'tool-length',
         'Length',
         undefined, {
-          toolName: 'Length'
-        },
+        toolName: 'Length'
+      },
         'Length'
       ),
       secondary: {
@@ -82,8 +82,8 @@ export default [
           'tool-length',
           'Length',
           undefined, {
-            toolName: 'Length'
-          },
+          toolName: 'Length'
+        },
           'Length Tool'
         ),
         _createToolButton(
@@ -91,8 +91,8 @@ export default [
           'tool-bidirectional',
           'Bidirectional',
           undefined, {
-            toolName: 'Bidirectional'
-          },
+          toolName: 'Bidirectional'
+        },
           'Bidirectional Tool'
         ),
         _createToolButton(
@@ -100,8 +100,8 @@ export default [
           'tool-annotate',
           'Annotation',
           undefined, {
-            toolName: 'ArrowAnnotate'
-          },
+          toolName: 'ArrowAnnotate'
+        },
           'Arrow Annotate'
         ),
         _createToolButton(
@@ -109,8 +109,8 @@ export default [
           'tool-elipse',
           'Ellipse',
           undefined, {
-            toolName: 'EllipticalRoi',
-          },
+          toolName: 'EllipticalRoi',
+        },
           'Ellipse Tool'
         ),
       ],
@@ -140,8 +140,8 @@ export default [
         'tool-window-level',
         'Window Level',
         undefined, {
-          toolName: 'Wwwc'
-        },
+        toolName: 'Wwwc'
+      },
         'Window Level'
       ),
       secondary: {
@@ -239,18 +239,9 @@ export default [
           'tool-stack-scroll',
           'Stack Scroll',
           undefined, {
-            toolName: 'StackScroll'
-          },
+          toolName: 'StackScroll'
+        },
           'Stack Scroll'
-        ),
-        _createToolButton(
-          'Magnify',
-          'tool-magnify',
-          'Magnify',
-          undefined, {
-            toolName: 'Magnify'
-          },
-          'Magnify'
         ),
         _createActionButton(
           'invert',
@@ -259,6 +250,15 @@ export default [
           'invertViewport',
           undefined,
           'Invert Colors'
+        ),
+        _createToolButton(
+          'Magnify',
+          'tool-magnify',
+          'Magnify',
+          undefined, {
+          toolName: 'Magnify'
+        },
+          'Magnify'
         ),
         _createToggleButton(
           'cine',
@@ -273,8 +273,8 @@ export default [
           'tool-angle',
           'Angle',
           undefined, {
-            toolName: 'Angle'
-          },
+          toolName: 'Angle'
+        },
           'Angle'
         ),
         _createToolButton(
@@ -282,8 +282,8 @@ export default [
           'tool-probe',
           'Probe',
           undefined, {
-            toolName: 'DragProbe'
-          },
+          toolName: 'DragProbe'
+        },
           'Probe'
         ),
         _createToolButton(
@@ -291,8 +291,8 @@ export default [
           'tool-rectangle',
           'Rectangle',
           undefined, {
-            toolName: 'RectangleRoi'
-          },
+          toolName: 'RectangleRoi'
+        },
           'Rectangle'
         ),
       ],
